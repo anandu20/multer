@@ -9,6 +9,7 @@ document.getElementById("frm").addEventListener("submit",(e)=>{
     }).then(async(res)=>{
         const result=await res.json()
         alert(result.msg)
+        window.location.href="../pages/user.html";
     }).catch((error)=>{
         console.log(error);
         

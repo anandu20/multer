@@ -1,5 +1,5 @@
 import { Router } from "express";
-import * as user from "./requestHandler.js";
+import * as user from "./requesthandler.js";
 import multer from "multer";
 import path from 'path';
 const storage=multer.diskStorage({

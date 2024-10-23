@@ -8,10 +8,10 @@ users.map((user)=>{
     str+=`
      <div class="card">
             <div class="image">
-                <img src="" alt="">
+                <img src="http://localhost:3000/api/image/${user.image.filename}" alt="">
             </div>
-            <h4>Name</h4>
-            <p>email</p>
+            <h4>${user.username}</h4>
+            <p>${user.email}</p>
         </div>
     `
     
@@ -20,3 +20,4 @@ document.getElementById('cards').innerHTML=str
     
 }
 getUsers();
+
