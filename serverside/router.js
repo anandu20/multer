@@ -1,6 +1,7 @@
 import { Router } from "express";
 import * as user from "./requestHandler.js";
 import multer from "multer";
+import path from 'path';
 const storage=multer.diskStorage({
     destination:"./uploads",
     filename:function (req, file, cb) {
@@ -13,5 +14,12 @@ const upload =multer({storage});
 const router=Router();
 
 router.route("/upload").post(upload.single('file'),user.addUser);  //the file  same as in html page in name field
+router.route("/getusers").get(user.getUsers)
+router.route('/image/:filename').get((req,res)=>{
+  let{filename}=req.params;
+  console.log(filename);
+  return res.sendFile(path.resolve(`./uploads/${filename}`))
+  
+})
 
 export default router;
