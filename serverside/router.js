@@ -21,5 +21,5 @@ router.route('/image/:filename').get((req,res)=>{
   return res.sendFile(path.resolve(`./uploads/${filename}`))
   
 })
-
+router.route("/delete/:_id").delete(user.deleteUser)
 export default router;
